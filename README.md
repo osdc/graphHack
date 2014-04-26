@@ -1,6 +1,5 @@
 start
 graphHack
-=========
 
 graphHack
 end
