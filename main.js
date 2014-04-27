@@ -60,7 +60,59 @@ $( document ).ready( function() {
         }
     };
 
-    var graphData = {
+
+
+
+
+
+/* var arr = {
+for(var i = 0; i<data.length; i++) 
+{
+    arr.push(data[i].state[var j])
+    console.log(arr);
+
+    for(j=0;j<state.length;j++)
+    
+    {
+	    for(var k= 0; k<crime.length; k++) 
+{
+    arr.push(data[i].crime[var k])
+
+}
+}
+}
+}*/
+for(var i=0;i<data.length;i++)
+{
+	for(var j=0,j<state.length;j++)
+	{
+		var arr=crime.slice();
+	
+  
+  
+  
+   var graphData = {
+
+        labels : ["2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013"],
+        datasets : [
+            {
+                fillColor : "RGBA(168, 230, 206, 0.7)",
+                strokeColor : "RGBA(168, 230, 206, 0.8)",
+                pointColor : "RGBA(168, 230, 206, 1)",
+                pointStrokeColor : "#fff",
+               data:arr.slice();
+            },
+           /* {
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : ['10','55','65','11','22','33','10','60','80','10','55','65','89']
+            }*/
+        ]
+        };
+
+    /*var graphData = {
 
         labels : ["2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013"],
         datasets : [
@@ -80,7 +132,7 @@ $( document ).ready( function() {
             }
         ]
         };
-
+*/
     var options = {
         //Boolean - If we show the scale above the chart data
         scaleOverlay : true,
