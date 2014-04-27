@@ -1,3 +1,4 @@
+<html>
 <head>
 
 <script type="text/javascript" src="jquery-2.1.0.js"></script>
@@ -6,3 +7,6 @@
 
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<body>
+</body>
+</html>
