@@ -169,6 +169,12 @@ var graphData = {
     var ctx = $("#myChart").get(0).getContext("2d");
     var myNewChart = new Chart( ctx ).Line( graphData, options );
 
+for( var i = 0; i < mainData.data.length; i++) {
+    var sponsor = mainData.data[i];
+    for(var i1=0;i1<sponsor.length;i1++)
+    console.log(sponsor[i1]);
+}
+
 });
 
 
