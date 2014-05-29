@@ -1,3 +1,3 @@
 Graph Hacking
-Started during OSDC conference
+Started during OSD conference
 
