@@ -1,7 +1,4 @@
 $( document ).ready( function() {
-    //var str="alok";
-    //var str1="alok";
-//  if(str == str1)
 alert("This application is made to draw graph according to data,in this specific case it plots graph of various child related crime in different states year wise");
         alert("To draw graph we simply need to click one state and then click on one specific crime of which graph needs to be plotted");
     console.log( 'I am ready' );
@@ -73,7 +70,7 @@ var options = {
         //Number - Pixel width of dataset stroke
         datasetStrokeWidth : 5,
 
-        //Boolean - Whether to fill the dataset with a colour
+        //Boolean - Whether to fill the dataset with a color
         datasetFill : true,
 
         //Boolean - Whether to animate the chart
@@ -107,88 +104,53 @@ var graphData = {
   var string="ANDHRA PRADESH";
 
 var f = new Array();
-for( var i = 0; i <38 ; i++) {
-    var sponsor = mainData.data[i];
-    var p2=document.createElement('p');
-    txt=document.createTextNode(mainData.data[i][0]);
-    p2.appendChild(txt);
-    document.body.appendChild(p2);
-    }
-for( var i = 0; i <mainData.data.length ; i++) {
-    var sponsor = mainData.data[i];
-        f[i]=new Array();
-    for(var i1=0;i1<sponsor.length;i1++)
-    {
-f[i][i1]=sponsor[i1];
+for (var i = 0; i <38 ; i++) {
+  var sponsor = mainData.data[i];
+  var p2=document.createElement('p');
+  txt=document.createTextNode(mainData.data[i][0]);
+  p2.appendChild(txt);
+  document.body.appendChild(p2);
 }
+for (var i = 0; i <mainData.data.length ; i++) {
+  var sponsor = mainData.data[i];
+  f[i]=new Array();
+  for (var i1=0;i1<sponsor.length;i1++) {
+    f[i][i1]=sponsor[i1];
+  }
 }
-//var p3=document.createElement('p');
-//p3.id='se';
-//p3.innerHTML="alok1";
-//document.getElementById('se').innerHTML="alokpandey";
-//p1.innerHTML="alokpandey";
 var print=[];
 var k=0;
-for(var i=0;i<12;i++)
-{
-    var p=document.createElement('p');
-  //  p.id="alok";
-    txt=document.createTextNode(crimedata[i]);
-    p.appendChild(txt);
-   //p.innerHTML="crimedata[i]";
-    
-    document.body.appendChild(p);
+for (var i=0;i<12;i++) {
+  var p=document.createElement('p');
+  txt=document.createTextNode(crimedata[i]);
+  p.appendChild(txt);
+  document.body.appendChild(p);
 }
 
-$("p").click(function(){
+$("p").click(function() {
     
-if(k==0)
-{
-    print[0]=$(this).text();
-    k++;
-
+if (k==0) {
+  print[0]=$(this).text();
+  k++;
 }
-else if(k==1)
-{
-print[1]=$(this).text();
-    k++;    
-    //alert(print[0]);
-   // alert(print[1]);
-    k=0;
-for(var i2=0;i2<mainData.data.length;i2++)
-{
+else if (k==1) {
+  print[1]=$(this).text();
+  k++;
+  k=0;
+  for (var i2=0;i2<mainData.data.length;i2++) {
     var sponsor1 = f[i2];
-    //console.log(sponsor1[0]);
-    //document.write(");
-if(sponsor1[0]==print[0])
-{
-k2=4;
-if(sponsor1[1]==print[1])
-{
-    alert("Matched");
-
-for(var i3=2;i3<sponsor1.length;i3++)
-    {
-//f[i][i1]=sponsor[i1];
-
-    graphData.datasets[0].data[i3-2]=sponsor1[i3];
-    //for(var i4=0;i4<13;i4++)
-    //console.log(graphData.datasets[0].data[i3-2]);
-//k2=4;
-var ctx = $("#myChart").get(0).getContext("2d");
-    var myNewChart = new Chart( ctx ).Line( graphData, options );
-   
+    if (sponsor1[0]==print[0]) {
+      k2=4;
+      if (sponsor1[1]==print[1]) {
+        alert("Matched");
+        for (var i3=2;i3<sponsor1.length;i3++) {
+          graphData.datasets[0].data[i3-2]=sponsor1[i3];
+          var ctx = $("#myChart").get(0).getContext("2d");
+          var myNewChart = new Chart( ctx ).Line( graphData, options );
+        }
+        break;
+      }
+    }
+  }
 }
-break;
-}
-}
-
-//else
-//alert("no match found");
-}
-
-}
-
-
-  });
- });
+});});
